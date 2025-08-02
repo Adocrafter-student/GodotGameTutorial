@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://cxxxvvw7u0bar"]
+[gd_scene load_steps=13 format=4 uid="uid://cxxxvvw7u0bar"]
 
 [ext_resource type="PackedScene" uid="uid://lysm1d3iol1i" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://c26crn6262v7x" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://m4eb3gtouvqx" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dv2ibrqb48v2j" path="res://scenes/coin.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://ckqtnxcshxw1" path="res://scenes/danger_zone.tscn" id="5_iywne"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -198,6 +199,8 @@ _data = {
 &"RESET": SubResource("Animation_lbhrr")
 }
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
@@ -238,3 +241,9 @@ position = Vector2(38, -25)
 
 [node name="Coin2" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(88, -54)
+
+[node name="DangerZone" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(1, 113)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+shape = SubResource("WorldBoundaryShape2D_p57ef")
