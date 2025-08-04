@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://cxxxvvw7u0bar"]
+[gd_scene load_steps=15 format=4 uid="uid://cxxxvvw7u0bar"]
 
 [ext_resource type="PackedScene" uid="uid://lysm1d3iol1i" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="FontFile" uid="uid://b6orlggnke5co" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://c26crn6262v7x" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://m4eb3gtouvqx" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dv2ibrqb48v2j" path="res://scenes/coin.tscn" id="4_lbhrr"]
@@ -266,3 +267,13 @@ tile_set = SubResource("TileSet_lbhrr")
 
 [node name="Slime" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(-88, -12)
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = -190.0
+offset_top = -132.0
+offset_right = -94.0
+offset_bottom = -109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_u5sy4")
+text = "Coins: "

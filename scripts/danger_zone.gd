@@ -2,7 +2,6 @@ extends Area2D
 
 @onready var timer: Timer = $Timer
 
-
 func _on_body_entered(body: Node2D) -> void:
 	print("Whopsie daisy")
 	Engine.time_scale = 0.5
@@ -11,5 +10,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	Engine.time_scale = 1
+	Engine.time_scale = 1.0
+	# Reset pause state when reloading scene
+	get_tree().paused = false
 	get_tree().reload_current_scene()
