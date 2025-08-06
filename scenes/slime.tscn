@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ivjd7nb3hirb"]
+[gd_scene load_steps=11 format=3 uid="uid://ivjd7nb3hirb"]
 
 [ext_resource type="Script" uid="uid://dtv7bhb2l7pq6" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://br1tqlbuw46l1" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_p2gj0"]
 [ext_resource type="PackedScene" uid="uid://ckqtnxcshxw1" path="res://scenes/danger_zone.tscn" id="2_n6pvg"]
+[ext_resource type="Script" uid="uid://dm71n8t4yqtxc" path="res://scripts/freezable.gd" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
 atlas = ExtResource("1_p2gj0")
@@ -65,3 +66,6 @@ target_position = Vector2(13, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 4)
 target_position = Vector2(-12, 0)
+
+[node name="Freezable" type="Node" parent="."]
+script = ExtResource("4_pjw23")

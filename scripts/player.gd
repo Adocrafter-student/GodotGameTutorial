@@ -5,12 +5,22 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var is_attacking = false
+var time_is_frozen: bool = false
 
 func _ready():
 	# Connect the animation finished signal
 	sprite.animation_finished.connect(_on_animation_finished)
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("special1"):
+		# Invert the state
+		time_is_frozen = not time_is_frozen
+		
+		if time_is_frozen:
+			TFreezeController.freeze_all()
+		else:
+			TFreezeController.unfreeze_all()
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
