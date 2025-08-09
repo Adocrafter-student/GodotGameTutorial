@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://h0q6ycf5jtxf"]
+
+[ext_resource type="Texture2D" uid="uid://cacjoq0larbbg" path="res://assets/mana-background.png" id="1_himex"]
+[ext_resource type="Texture2D" uid="uid://dql1mkplblou7" path="res://assets/mana-fill.png" id="2_t4di4"]
+[ext_resource type="Script" uid="uid://bouwp7jiry55" path="res://manabar.gd" id="3_sagva"]
+
+[node name="manabar" type="TextureProgressBar"]
+offset_right = 128.0
+offset_bottom = 64.0
+value = 100.0
+texture_under = ExtResource("1_himex")
+texture_progress = ExtResource("2_t4di4")
+script = ExtResource("3_sagva")

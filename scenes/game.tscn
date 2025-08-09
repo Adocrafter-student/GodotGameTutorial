@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cxxxvvw7u0bar"]
+[gd_scene load_steps=14 format=4 uid="uid://cxxxvvw7u0bar"]
 
 [ext_resource type="PackedScene" uid="uid://lysm1d3iol1i" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="FontFile" uid="uid://b6orlggnke5co" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_u5sy4"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dv2ibrqb48v2j" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://ckqtnxcshxw1" path="res://scenes/danger_zone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://ivjd7nb3hirb" path="res://scenes/slime.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://h0q6ycf5jtxf" path="res://scenes/manabar.tscn" id="8_0tnpc"]
+[ext_resource type="PackedScene" uid="uid://cq2kkhp8mxn2x" path="res://scenes/health_bar.tscn" id="8_gee14"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 
@@ -233,3 +235,22 @@ offset_bottom = -109.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5sy4")
 text = "Coins: "
+
+[node name="CanvasLayerHo" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="TextureProgressBar" parent="CanvasLayerHo" node_paths=PackedStringArray("stats_component") instance=ExtResource("8_gee14")]
+offset_top = -19.5
+offset_right = 128.0
+offset_bottom = 44.5
+stats_component = NodePath("../../Player/StatsComponent")
+
+[node name="manabar" parent="CanvasLayerHo" node_paths=PackedStringArray("stats_component") instance=ExtResource("8_0tnpc")]
+offset_top = 20.0
+offset_bottom = 84.0
+stats_component = NodePath("../../Player/StatsComponent")
+
+[editable path="Player"]

@@ -6,19 +6,33 @@ const JUMP_VELOCITY = -300.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var is_attacking = false
 var time_is_frozen: bool = false
+@onready var stats_component: Node = $StatsComponent
+@export var time_freeze_cost_per_second: float = 20.0
+
 
 func _ready():
 	# Connect the animation finished signal
 	sprite.animation_finished.connect(_on_animation_finished)
+	stats_component.died.connect(_die)
 
 func _physics_process(delta: float) -> void:
+	# --- Time Freeze Logic (now using the component) ---
 	if Input.is_action_just_pressed("special1"):
-		# Invert the state
-		time_is_frozen = not time_is_frozen
-		
-		if time_is_frozen:
+		# Ask the component if we have mana
+		if not time_is_frozen and stats_component.has_enough_mana(1): # Check for at least 1 mana
+			time_is_frozen = true
 			TFreezeController.freeze_all()
 		else:
+			time_is_frozen = false
+			TFreezeController.unfreeze_all()
+	
+	if time_is_frozen:
+		# Tell the component to drain mana
+		stats_component.drain_mana(time_freeze_cost_per_second * delta)
+		
+		# If the component reports 0 mana, stop freezing
+		if stats_component.current_mana == 0:
+			time_is_frozen = false
 			TFreezeController.unfreeze_all()
 		
 	# Add the gravity.
@@ -66,3 +80,7 @@ func _update_animation(dir: float) -> void:
 func _on_animation_finished():
 	if sprite.animation == "attack":
 		is_attacking = false
+
+func _die():
+	print("Player has died!")
+	queue_free()
