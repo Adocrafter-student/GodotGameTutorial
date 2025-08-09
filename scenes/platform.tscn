@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://m4eb3gtouvqx"]
 
 [ext_resource type="Texture2D" uid="uid://cryns07apy26d" path="res://assets/brackeys_platformer_assets/sprites/platforms.png" id="1_mi635"]
-[ext_resource type="Script" uid="uid://wbw8jipk72mq" path="res://scenes/platform.gd" id="1_nlgqw"]
+[ext_resource type="Script" uid="uid://wbw8jipk72mq" path="res://scripts/platform.gd" id="1_nlgqw"]
 [ext_resource type="Script" uid="uid://dm71n8t4yqtxc" path="res://scripts/freezable.gd" id="3_507ja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]

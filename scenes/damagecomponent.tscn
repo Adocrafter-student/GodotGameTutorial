@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdm8w65pthjx7"]
 
-[ext_resource type="Script" uid="uid://b8a16sftloxdf" path="res://scenes/damagecomponent.gd" id="1_lrkwl"]
+[ext_resource type="Script" uid="uid://b8a16sftloxdf" path="res://scripts/damagecomponent.gd" id="1_lrkwl"]
 
 [node name="damage_component" type="Area2D"]
 collision_mask = 3

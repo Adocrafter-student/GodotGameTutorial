@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byf5gc8e0ufnm" path="res://assets/glitch healthbar-background.png" id="1_y3kqx"]
 [ext_resource type="Texture2D" uid="uid://i00da3efenge" path="res://assets/glitch healthbar-fill.png" id="2_6opq1"]
-[ext_resource type="Script" uid="uid://64qdoe7wnc5w" path="res://scenes/progress_bar.gd" id="3_6opq1"]
+[ext_resource type="Script" uid="uid://64qdoe7wnc5w" path="res://scripts/progress_bar.gd" id="3_6opq1"]
 
 [node name="TextureProgressBar" type="TextureProgressBar"]
 offset_right = 40.0
