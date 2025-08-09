@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtv7bhb2l7pq6" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://br1tqlbuw46l1" path="res://assets/brackeys_platformer_assets/sprites/slime_purple.png" id="1_p2gj0"]
-[ext_resource type="PackedScene" uid="uid://ckqtnxcshxw1" path="res://scenes/danger_zone.tscn" id="2_n6pvg"]
+[ext_resource type="PackedScene" uid="uid://cdm8w65pthjx7" path="res://scenes/damagecomponent.tscn" id="3_pjw23"]
 [ext_resource type="Script" uid="uid://dm71n8t4yqtxc" path="res://scripts/freezable.gd" id="4_pjw23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pjw23"]
@@ -53,9 +53,9 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.0678387
 
-[node name="DangerZone" parent="." instance=ExtResource("2_n6pvg")]
+[node name="damage_component" parent="." instance=ExtResource("3_pjw23")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_component"]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0l8pv")
 

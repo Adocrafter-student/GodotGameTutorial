@@ -12,12 +12,12 @@ func _ready():
 		return
 
 	# Set the initial value of the health bar.
-	update_health_bar()
+	update_health_bar((stats_component.current_health))
 	
 	# Connect to the StatsComponent's "health_changed" signal.
 	stats_component.health_changed.connect(update_health_bar)
 
 # This function updates the visual of the health bar.
 # It now gets its data from the stats_component.
-func update_health_bar():
-	value = (stats_component.current_health * 100) / stats_component.max_health
+func update_health_bar(new_health):
+	value = (new_health * 100) / stats_component.max_health
